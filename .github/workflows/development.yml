@@ -13,13 +13,13 @@ jobs:
       - name: Development Code
         uses: actions/checkout@v2
       - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
+        uses: Shahidkhan0786/github-actions-herokuu
         with:
           node-version: 16.x
       - run: npm install
       - run: npm run build --if-present
       - name: Deploy to Heroku
-        uses: heroku git:remote -a github-actions-heroku-developp
+        uses: github-actions-heroku-developp  #path of docker images
         with:
           args: deploy --dir=build --prod
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
